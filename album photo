@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album Photo</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        #photos {
+            display: none;
+            margin-top: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 10px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Album Photo</h1>
+    <p>Entrez le code pour voir les photos :</p>
+    <input type="text" id="code" placeholder="Entrez le code">
+    <button onclick="verifierCode()">Voir les photos</button>
+
+    <div id="photos">
+        <h2>Voici les photos :</h2>
+        <img src="https://drive.google.com/uc?id=1cpJU_NPAgs32xWj9c8WWLLgRfRmMXHWU" alt="Photo 1">
+        <img src="https://drive.google.com/uc?id=1tEfhGdIprI6-MzCIasqFDVMCvZGFRze5" alt="Photo 2">
+        <img src="https://drive.google.com/uc?id=1ex88rGcc3j7W3zeacpz0lOhvQEXYrAz0" alt="Photo 3">
+    </div>
+
+    <script>
+        function verifierCode() {
+            var code = document.getElementById('code').value;
+            if (code === '1234') {
+                document.getElementById('photos').style.display = 'block';
+            } else {
+                alert('Code incorrect. Veuillez réessayer.');
+            }
+        }
+    </script>
+
+</body>
+</html>
